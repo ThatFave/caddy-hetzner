@@ -14,6 +14,8 @@ LABEL org.opencontainers.image.title=Caddy
 
 COPY --from=builder /go/caddy /usr/bin
 
+ENV XDG_DATA_HOME=/data
+
 EXPOSE 80
 EXPOSE 443
 EXPOSE 443/udp
