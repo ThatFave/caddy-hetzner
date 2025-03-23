@@ -12,7 +12,7 @@ FROM alpine
 
 LABEL org.opencontainers.image.title=Caddy
 
-COPY --from=builder caddy /srv
+COPY --from=builder /go/caddy /srv
 
 EXPOSE 80
 EXPOSE 443
