@@ -1,4 +1,4 @@
-FROM golang:1.22 as builder
+FROM golang:1.22 AS builder
 
 RUN apt update && \
     apt install -y debian-keyring debian-archive-keyring apt-transport-https && \
@@ -12,7 +12,7 @@ FROM alpine
 
 LABEL org.opencontainers.image.title=Caddy
 
-COPY --from=builder /go/caddy /srv
+COPY --from=builder /go/caddy /usr/bin
 
 EXPOSE 80
 EXPOSE 443
